@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="18%p"
+    android:horizontalGap="0px"
+    android:verticalGap="0px"
+    android:keyHeight="@dimen/key_height"
+    >
+
+    <Row>
+        <Key android:codes="-1049" android:keyIcon="@drawable/final1" android:iconPreview="@drawable/final1_b" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1050" android:keyIcon="@drawable/final2" android:iconPreview="@drawable/final2_b"/>
+        <Key android:codes="-1051" android:keyIcon="@drawable/final3" android:iconPreview="@drawable/final3_b"/>  
+        <Key android:codes="-1048" android:keyIcon="@drawable/final0" android:iconPreview="@drawable/final0_b" android:keyWidth="15%p"/>
+        <Key android:codes="65292,12290" android:keyLabel="，。" android:keyWidth="15%p"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/delete_icon"  android:keyWidth="16%p" android:isRepeatable="true"  android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <Key android:codes="-1052" android:keyIcon="@drawable/final4" android:iconPreview="@drawable/final4_b"  android:keyEdgeFlags="left"/>  
+        <Key android:codes="-1053" android:keyIcon="@drawable/final5" android:iconPreview="@drawable/final5_b"/>
+        <Key android:codes="-1054" android:keyIcon="@drawable/final6" android:iconPreview="@drawable/final6_b"/>
+        <Key android:codes="-1042" android:keyIcon="@drawable/star_icon" android:iconPreview="@drawable/star_icon" android:keyWidth="15%p"/>
+        <Key android:codes="-6" android:keyIcon="@drawable/arrow_up"   android:keyWidth="15%p"/>
+        <Key android:codes="-10" android:keyIcon="@drawable/enter_icon" android:iconPreview="@drawable/enter_icon" android:keyWidth="16%p" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <Key android:codes="-1055" android:keyIcon="@drawable/final7" android:iconPreview="@drawable/final7_b" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1056" android:keyIcon="@drawable/final8" android:iconPreview="@drawable/final8_b"/>
+        <Key android:codes="-1057" android:keyIcon="@drawable/final9" android:iconPreview="@drawable/final9_b"/>
+        <Key android:codes="-7" android:keyIcon="@drawable/arrow_left"    android:keyWidth="15%p"/>
+        <Key android:codes="-8" android:keyIcon="@drawable/arrow_down"   android:keyWidth="15%p"/>
+        <Key android:codes="-9" android:keyIcon="@drawable/arrow_right"  android:keyWidth="16%p" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:codes="-300" android:keyIcon="@drawable/setting_label"  android:keyEdgeFlags="left"/>
+        <Key android:codes="-400" android:keyIcon="@drawable/symbols_icon" />
+        <Key android:codes="32" android:keyIcon="@drawable/space_icon" android:keyWidth="28%p" android:isRepeatable="true"/>
+        <Key android:codes="-500" android:keyIcon="@drawable/letters_icon" />
+        <Key android:codes="-6000" android:keyIcon="@drawable/yin"  android:keyEdgeFlags="right"/>
+    </Row>
+</Keyboard>
+    <!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/xml/newyinxing_second.xml -->

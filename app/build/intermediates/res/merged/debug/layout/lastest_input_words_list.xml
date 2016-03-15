@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <LinearLayout android:id="@+id/listLinearLayout"  
+              android:layout_width="fill_parent"   
+              android:layout_height="wrap_content"  
+              android:orientation="vertical" >             
+               
+        <!-- 在LinearLayout里嵌套一个ListView控件 -->  
+        <ListView android:id="@id/android:list"         
+                  android:layout_width="fill_parent"    
+                  android:layout_height="wrap_content"  
+                  android:drawSelectorOnTop="false"     
+                  android:scrollbars="vertical"/>           
+        <TextView
+        		  android:layout_width="fill_parent"
+        		  android:layout_height="20dip"
+        />               
+    </LinearLayout>  
+    
+</LinearLayout><!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/layout/lastest_input_words_list.xml -->

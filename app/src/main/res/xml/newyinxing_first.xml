@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="18%p"
+    android:horizontalGap="4dp"
+    android:verticalGap="4dp"
+    android:keyHeight="@dimen/key_height"
+    >
+
+    <Row>
+        <!--<Key android:codes="65292,12290" android:keyLabel="，。" android:keyWidth="19%p" android:keyEdgeFlags="left"/>-->
+        <Key android:codes="-1049" android:keyLabel="1 ab"  android:keyWidth="19%p" />
+        <Key android:codes="-1050" android:keyLabel="2 c" android:keyWidth="19%p"/>
+        <Key android:codes="-1051" android:keyLabel="3 def" android:keyWidth="19%p"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/icon_delete1"  android:keyWidth="19%p" android:isRepeatable="true"  android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <!--<Key android:codes="65292,12290" android:keyLabel="。" android:keyWidth="20%p" android:keyEdgeFlags="left"/>-->
+        <Key android:codes="-1052" android:keyLabel="4 gh                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           "  android:keyWidth="20%p"/>
+        <Key android:codes="-1053" android:keyLabel="5 jkl" android:keyWidth="20%p"/>
+        <Key android:codes="-1054" android:keyLabel="6 mno" android:keyWidth="20%p"/>
+        <Key android:codes="-10"  android:keyWidth="20%p" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <!--<Key android:codes="65292,12290" android:keyLabel="\?" android:keyWidth="20%p" android:keyEdgeFlags="left"/>-->
+        <Key android:codes="-1055" android:keyLabel="7 pqr" android:keyWidth="20%p" />
+        <Key android:codes="-1056" android:keyLabel="8 st" android:keyWidth="20%p" />
+        <Key android:codes="-1057" android:keyLabel="9 wxy" android:keyWidth="20%p" />
+        <Key android:codes="-10"  android:keyWidth="20%p" android:keyLabel="回车" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row android:rowEdgeFlags="bottom">
+        <!--<Key android:codes="-300" android:keyLabel="帮助" android:keyEdgeFlags="left"/>-->
+        <Key android:codes="-400" android:keyLabel="\?123" />
+        <!--<Key android:codes="-500" android:keyLabel="ABC"/>-->
+        <Key android:codes="-1042" android:keyLabel="*" android:keyWidth="15%p"/>
+        <Key android:codes="-1048" android:keyLabel="0 z" android:keyWidth="15%p"/>
+        <Key android:codes="32" android:keyIcon="@drawable/icon_space" 
+                android:keyWidth="28%p" android:isRepeatable="true"/>
+        <Key android:codes="-6000" android:keyIcon="@drawable/yin"  android:keyEdgeFlags="right"/>
+    </Row>
+</Keyboard>
+    

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="10%p"
+    android:horizontalGap="0px"
+    android:verticalGap="0px"
+    android:keyHeight="@dimen/key_height"
+    >
+
+    <Row>
+        <Key android:codes="1000" android:keyLabel=":-D" android:keyWidth="18%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="1001" android:keyLabel=":-(" android:keyWidth="16%p" />
+        <Key android:codes="1002" android:keyLabel=":-O" android:keyWidth="16%p" />
+        <Key android:codes="1003" android:keyLabel=":-p" android:keyWidth="16%p" />
+        <Key android:codes="1004" android:keyLabel=":-|" android:keyWidth="16%p" />
+        <Key android:codes="1005" android:keyLabel="^0^" android:keyWidth="18%p" android:keyEdgeFlags="right" />
+    </Row>
+    
+    <Row>
+        <Key android:codes="1006" android:keyLabel="（⊙o⊙）" android:keyWidth="18%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="1007" android:keyLabel="→_→" android:keyWidth="16%p"/>
+        <Key android:codes="1008" android:keyLabel="T_T" android:keyWidth="16%p"/>
+        <Key android:codes="1009" android:keyLabel="-_-!" android:keyWidth="16%p"/>
+        <Key android:codes="1010" android:keyLabel="-_-|||" android:keyWidth="16%p"/>
+        <Key android:codes="1011" android:keyLabel="(∩＿∩)" android:keyWidth="18%p" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row>
+        <Key android:codes="1012" android:keyLabel="(^O^)" android:keyWidth="18%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="1013" android:keyLabel="(x_x)?" android:keyWidth="16%p" />
+        <Key android:codes="1014" android:keyLabel="=_=凸" android:keyWidth="16%p" />
+        <Key android:codes="1015" android:keyLabel="(¯(∞)¯)" android:keyWidth="16%p" />
+        <Key android:codes="1016" android:keyLabel="orz" android:keyWidth="16%p"/>
+        <Key android:codes="1017" android:keyLabel="囧" android:keyWidth="18%p" android:keyEdgeFlags="right"/>
+    </Row>
+    
+    <Row  android:rowEdgeFlags="bottom">
+        <Key android:codes="-200" android:keyIcon="@drawable/hanzi_label" android:keyWidth="16%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="-300" android:keyLabel="设置" android:keyWidth="16%p"/>
+        <Key android:codes="32" android:keyIcon="@drawable/space_icon_b" android:keyWidth="20%p" android:isRepeatable="true"/>
+        <Key android:codes="-400" android:keyIcon="@drawable/symbols_icon" android:keyWidth="16%p"/>
+        <Key android:codes="-500" android:keyIcon="@drawable/letters_icon_b" android:keyWidth="16%p"/>    
+        <Key android:codes="-10" android:keyIcon="@drawable/enter_icon_b"  android:keyWidth="16%p" android:keyEdgeFlags="right"/>
+    </Row>
+</Keyboard><!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/xml/symbolicexpression.xml -->

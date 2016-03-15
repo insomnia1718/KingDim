@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="KeyView">
+        <attr name="text_up" format="string"/>
+        <attr name="text_down" format="string"/>
+        <attr name="icon" format="reference"/>
+        <attr name="input_text" format="string"/>
+        <attr name="code" format="integer"/>
+        <attr name="text_down_size" format="integer"/>
+        <attr name="text_up_size" format="integer"/>
+        <attr name="text_down_color" format="color"/>
+        <attr name="text_up_color" format="color"/>
+    </declare-styleable>
+</resources>

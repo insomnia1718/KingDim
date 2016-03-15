@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+              android:orientation="horizontal"   
+              android:layout_width="fill_parent"   
+              android:layout_height="fill_parent">  
+                
+    <TextView android:id="@+id/optionName"   
+              android:layout_width="fill_parent"  
+              android:layout_height="40dip"   
+              android:gravity="center"
+              android:singleLine="true"   
+              android:textSize="10pt"  
+              android:paddingTop="2dip"  
+              android:paddingLeft="2dip"  
+               />   
+</LinearLayout>  <!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/layout/list.xml -->

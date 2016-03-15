@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<zhang.stu.NewInputMethod.MyEditText
+    android:id="@+id/editT1"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    />
+<Button
+  android:id="@+id/button1"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginTop="20dip"
+  android:layout_marginBottom="20dip"
+  android:text="添加到自造词"
+  /> 
+  <Button
+  android:id="@+id/button4"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="20dip"
+  android:text="从最近输入中选择自造词"
+  />
+<Button
+  android:id="@+id/button2"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="20dip"
+  android:text="从剪切板选择自造词"
+  />
+ <Button
+  android:id="@+id/button3"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="20dip"
+  android:text="从通讯录导入自造词"
+  />
+</LinearLayout><!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/layout/selfmadewords.xml -->

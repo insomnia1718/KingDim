@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+        package="zhang.stu.NewInputMethod">
+        <uses-sdk android:minSdkVersion="14" 
+android:targetSdkVersion="23"
+ />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>  
+    <application android:label="@string/ime_name">
+        <service android:name="zhang.stu.NewInputMethod.KingDimInputMethodService"
+                android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+        
+        <activity android:name="zhang.stu.NewInputMethod.SettingActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="zhang.stu.NewInputMethod.SettingList" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="zhang.stu.NewInputMethod.LastestInputWordsList" android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="zhang.stu.NewInputMethod.SelfMadeWords" />
+        <activity android:name="zhang.stu.NewInputMethod.ContactsActivity" android:permission="android.permission.READ_CONTACTS" />
+    </application>
+</manifest>
