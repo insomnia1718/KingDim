@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\R9NZ8KB\Desktop\NewInputMethod\app\libs\butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="C:\Users\R9NZ8KB\Desktop\NewInputMethod\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1-af811bce2831a19684ac4489ef30c70f9a584c9c.jar" />
+    </item>
+
+</items>

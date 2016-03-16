@@ -21,7 +21,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="4dp"
                 app:text_up="1"
-                app:code="11111"
+                app:code="-1049"
                 app:text_down="ab"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 app:text_up="2"
                 app:text_down="c"
-                app:code="11112"
+                app:code="-1050"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -37,7 +37,7 @@
                 android:layout_weight="1"
                 app:text_up="3"
                 app:text_down="def"
-                app:code="11113"
+                app:code="-1051"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_weight="1"
                 app:text_up="4"
                 app:text_down="gh"
-                app:code="11114"
+                app:code="-1052"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 app:text_up="5"
                 app:text_down="jkl"
-                app:code="11115"
+                app:code="-1053"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 app:text_up="6"
                 app:text_down="mno"
-                app:code="11116"
+                app:code="-1054"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 app:text_up="7"
                 app:text_down="pqr"
-                app:code="11117"
+                app:code="-1055"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -90,14 +90,14 @@
                 android:layout_marginRight="4dp"
                 app:text_up="8"
                 app:text_down="st"
-                app:code="11118"
+                app:code="-1056"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 app:text_up="9"
                 app:text_down="wxy"
-                app:code="11119"
+                app:code="-1057"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -110,7 +110,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="4dp"
                 app:text_down="*"
-                app:code="10009"
+                app:code="-1042"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
                 android:layout_width="0dp"
@@ -118,7 +118,7 @@
                 android:layout_marginRight="4dp"
                 app:text_up="0"
                 app:text_down="z"
-                app:code="11110"
+                app:code="-1048"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
                 android:layout_width="0dp"

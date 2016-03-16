@@ -13,6 +13,7 @@ import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -21,11 +22,13 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 //import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import zhang.stu.NewInputMethod.widget.CandidateLayout;
 import zhang.stu.NewInputMethod.widget.KeyView;
 
 /**
@@ -76,6 +79,11 @@ public class KingDimInputMethodService extends InputMethodService
     private LinearLayout linearLayout;
     private WindowManager mWindowManager;
     private LinearLayout main_input_view;
+    private RelativeLayout funcLayout;
+    private CandidateLayout canView;
+    private LinearLayout yinmu_layout;
+    private LinearLayout yunmu_layout;
+    private LinearLayout bihua_layout;
     private Key ModeKey;
     private View pre_view;
     private View cur_view;
@@ -147,19 +155,29 @@ public class KingDimInputMethodService extends InputMethodService
         downBtn.setOnClickListener(this);
         setListener(linearLayout);
         main_input_view = (LinearLayout) linearLayout.findViewById(R.id.main_input_view);
+        canView = (CandidateLayout)linearLayout.findViewById(R.id.canView);
+        funcLayout = (RelativeLayout)linearLayout.findViewById(R.id.layout_func);
+        yinmu_layout = (LinearLayout)linearLayout.findViewById(R.id.layout_first_9);
+        yunmu_layout = (LinearLayout)linearLayout.findViewById(R.id.layout_second_9);
+        canView.setOnChooseSuggestionListener(new CandidateLayout.OnChooseSuggestionListener() {
+            @Override
+            public void onChoose(String suggestion) {
+                commitText(suggestion);
+            }
+        });
         if (mWindowManager == null) {
             mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         }
         return linearLayout;
     }
 
-    private void setListener(LinearLayout linearLayout) {
-        for (int i = 0; i < linearLayout.getChildCount(); i++) {
-            View v = linearLayout.getChildAt(i);
+    private void setListener(ViewGroup viewGroup) {
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            View v = viewGroup.getChildAt(i);
             if (v instanceof KeyView) {
                 v.setOnClickListener(this);
-            } else if (v instanceof LinearLayout) {
-                setListener((LinearLayout) v);
+            } else if (v instanceof ViewGroup) {
+                setListener((ViewGroup)v);
             }
         }
     }
@@ -951,16 +969,29 @@ public class KingDimInputMethodService extends InputMethodService
         }
     }
 
+    private void updateKeyboard(){
+        if(mComposing.length() == 0){
+            showKeyboardType(0);
+        }else if(mComposing.length() == 1){
+            showKeyboardType(1);
+        }else if(mComposing.length() >= 2){
+            showKeyboardType(2);
+        }
+    }
+
     //???ú??????????????????????????cnadidatevView?????????????
     public void setSuggestions(List<String> suggestions, boolean completions,
                                boolean typedWordValid) {
-        if (suggestions != null && suggestions.size() > 0) {
-            setCandidatesViewShown(true);//?ú????????
-        } else if (isExtractViewShown()) {
-            setCandidatesViewShown(true);
-        }
-        if (mCandidateView != null) {
-            mCandidateView.setSuggestions(suggestions, completions, typedWordValid);
+//        if (suggestions != null && suggestions.size() > 0) {
+//            setCandidatesViewShown(true);//?ú????????
+//        } else if (isExtractViewShown()) {
+//            setCandidatesViewShown(true);
+//        }
+//        if (mCandidateView != null) {
+//            mCandidateView.setSuggestions(suggestions, completions, typedWordValid);
+//        }
+        if(canView!=null) {
+            canView.setSuggestions(suggestions);
         }
     }
 
@@ -1311,6 +1342,15 @@ public class KingDimInputMethodService extends InputMethodService
             int code = ((KeyView) v).getCode();
             if (code >= 44401 && code <= 44426) {
                 commitText(((KeyView) v).getInput_text());
+                return;
+            }
+            if((code >= -1058) && (code <= -1042)){
+                mComposing.append((char) (-code-1000));//把当前输入的一个字符添加到mComposing字符串中
+                getCurrentInputConnection().setComposingText(mComposing, 1);//在输入目标中也显示mComposing
+                List<String> suggestions = kimCode.getCandidates(mComposing);
+                updateCandidates();//更新候选列表
+                setSuggestions(suggestions, true, true);
+                updateKeyboard();
             }
             switch (code) {
                 case 10000:
@@ -1403,10 +1443,24 @@ public class KingDimInputMethodService extends InputMethodService
         }
     }
 
+    private void showKeyboardType(int type){
+        //0 == 音母键盘，1 == 韵母键盘， 2 == 笔画键盘
+        LayoutInflater inflater = getLayoutInflater();
+        switch (type){
+            case 0:
+                yunmu_layout.setVisibility(View.GONE);
+                yinmu_layout.setVisibility(View.VISIBLE);
+                break;
+            case 1:
+                yinmu_layout.setVisibility(View.GONE);
+                yunmu_layout.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
     private void replaceEnInput() {
         View enInputView = getLayoutInflater().inflate(R.layout.input_qwer, null);
         replaceView(main_input_view, enInputView);
-        setListener((LinearLayout) enInputView);
     }
 
     private void replaceView(View currentView, View newView) {
@@ -1416,6 +1470,9 @@ public class KingDimInputMethodService extends InputMethodService
         int index = parent.indexOfChild(currentView);
         parent.removeView(currentView);
         parent.addView(newView, index);
+        if(cur_view instanceof ViewGroup) {
+            setListener((ViewGroup) cur_view);
+        }
     }
 
     private void doReturnView() {

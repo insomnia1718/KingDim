@@ -4,6 +4,6 @@ local*.properties
 thumbs.db
 /.gradle
 /.idea
-/build
+/app/build
 /bin/*.cache
 /proguard-local.txt

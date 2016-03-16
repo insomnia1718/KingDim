@@ -10,7 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/text_normal" />
-
+    <zhang.stu.NewInputMethod.widget.CandidateLayout
+        android:layout_width="match_parent"
+        android:id="@+id/canView"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/text_normal" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +25,7 @@
         android:paddingBottom="8dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
+        android:id="@+id/layout_func"
         android:paddingTop="8dp">
 
         <ImageView
@@ -118,7 +126,10 @@
                 />
         </LinearLayout>
         <include layout="@layout/first_9"
+            android:id="@+id/layout_first_9"
             />
+        <include layout="@layout/second_9"
+            android:id="@+id/layout_second_9"/>
 
 
         <LinearLayout
