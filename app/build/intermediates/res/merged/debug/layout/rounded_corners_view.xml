@@ -9,4 +9,4 @@
     <padding android:left="3dp" android:top="3dp"    
         android:right="3dp" android:bottom="3dp" />  <!--文字跟边距的距离  -->
 </shape>  
-<!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/layout/rounded_corners_view.xml -->
+<!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/layout/rounded_corners_view.xml -->

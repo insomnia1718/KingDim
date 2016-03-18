@@ -58,4 +58,4 @@
         <Key android:codes="-500" android:keyIcon="@drawable/letters_icon_b" android:keyWidth="16%p"/>    
         <Key android:codes="-10" android:keyIcon="@drawable/enter_icon_b"  android:keyWidth="16%p" android:keyEdgeFlags="right"/>
     </Row>
-</Keyboard><!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/xml/symbols.xml -->
+</Keyboard><!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/xml/symbols.xml -->

@@ -30,4 +30,4 @@
         android:id="@+id/key_icon"
         android:visibility="gone"
         />
-</LinearLayout><!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/layout/key_layout.xml -->
+</LinearLayout><!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/layout/key_layout.xml -->

@@ -159,10 +159,14 @@ public class KingDimInputMethodService extends InputMethodService
         funcLayout = (RelativeLayout)linearLayout.findViewById(R.id.layout_func);
         yinmu_layout = (LinearLayout)linearLayout.findViewById(R.id.layout_first_9);
         yunmu_layout = (LinearLayout)linearLayout.findViewById(R.id.layout_second_9);
+        updateCandidates();
         canView.setOnChooseSuggestionListener(new CandidateLayout.OnChooseSuggestionListener() {
             @Override
             public void onChoose(String suggestion) {
                 commitText(suggestion);
+                mComposing.setLength(0);
+                updateCandidates();
+                updateKeyboard();
             }
         });
         if (mWindowManager == null) {
@@ -1412,7 +1416,7 @@ public class KingDimInputMethodService extends InputMethodService
             case R.id.setting_btn:
                 break;
             case R.id.down_btn:
-                requestHideSelf(0);
+                hideKeyboard();
                 break;
         }
     }
@@ -1448,14 +1452,23 @@ public class KingDimInputMethodService extends InputMethodService
         LayoutInflater inflater = getLayoutInflater();
         switch (type){
             case 0:
-                yunmu_layout.setVisibility(View.GONE);
-                yinmu_layout.setVisibility(View.VISIBLE);
+                if(yunmu_layout!=null&&yinmu_layout!=null) {
+                    yunmu_layout.setVisibility(View.GONE);
+                    yinmu_layout.setVisibility(View.VISIBLE);
+                }
                 break;
             case 1:
-                yinmu_layout.setVisibility(View.GONE);
-                yunmu_layout.setVisibility(View.VISIBLE);
+                if(yunmu_layout!=null&&yinmu_layout!=null) {
+                    yinmu_layout.setVisibility(View.GONE);
+                    yunmu_layout.setVisibility(View.VISIBLE);
+                }
                 break;
         }
+    }
+
+    private void hideKeyboard(){
+        requestHideSelf(0);
+        mComposing.setLength(0);
     }
 
     private void replaceEnInput() {

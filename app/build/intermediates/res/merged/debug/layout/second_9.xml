@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.7"
@@ -128,5 +127,4 @@
                 app:code="10010"
                 android:layout_height="match_parent" />
         </LinearLayout>
-    </LinearLayout>
-</merge><!-- From: file:/C:/Users/R9NZ8KB/Desktop/NewInputMethod/app/src/main/res/layout/second_9.xml -->
+    </LinearLayout><!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/layout/second_9.xml -->
