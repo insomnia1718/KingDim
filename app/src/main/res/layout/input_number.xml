@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:orientation="horizontal"
+        android:id="@+id/main_input_view"
+    android:padding="4dp"
+        android:background="@color/light_gray"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:input_text="+"
+                app:code="50001"
+                android:layout_marginBottom="4dp"
+                app:text_down="+" />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:input_text="-"
+                app:code="50002"
+                android:layout_marginBottom="4dp"
+                app:text_down="-"
+                />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:input_text="*"
+                app:code="50003"
+                android:layout_marginBottom="4dp"
+                app:text_down="*"
+                />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="4dp"
+                app:text_down="/"
+                app:code="50004"
+                app:input_text="/"
+                />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:icon="@drawable/icon_return"
+                android:padding="6dp"
+                android:background="@drawable/key_bg_selector"
+                app:code="50018"
+                />
+        </LinearLayout>
+        <include layout="@layout/number_9"
+            android:id="@+id/layout_number_9"
+            />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.15"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:icon="@drawable/icon_delete1"
+                app:code="10005"
+                />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:code="50005"
+                app:text_down=":"
+                app:input_text=":"
+                />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:code="50006"
+                app:text_down="\@"
+                app:input_text="\@"
+                />
+            <zhang.stu.NewInputMethod.widget.KeyView
+                android:layout_width="match_parent"
+                android:background="@drawable/key_bg_selector"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:code="10008"
+                app:icon="@drawable/icon_huanhang"
+                />
+        </LinearLayout>
+    </LinearLayout>

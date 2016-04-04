@@ -1,73 +1,73 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:1:1-22:12
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:1:1-22:12
 	package
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:2:9-43
-		INJECTED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml
-		INJECTED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:2:9-43
+		INJECTED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml
+		INJECTED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:3:9-5:4
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:3:9-5:4
 	android:targetSdkVersion
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:4:1-30
-		INJECTED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml
-		INJECTED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:4:1-30
+		INJECTED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml
+		INJECTED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:3:19-45
-		INJECTED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml
-		INJECTED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:3:19-45
+		INJECTED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml
+		INJECTED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:6:5-71
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:6:5-71
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:6:22-69
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:6:22-69
 application
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:7:5-21:19
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:7:5-21:19
 	android:label
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:7:18-50
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:7:18-50
 service#zhang.stu.NewInputMethod.KingDimInputMethodService
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:8:9-14:19
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:8:9-14:19
 	android:permission
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:9:17-74
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:9:17-74
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:8:18-83
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:8:18-83
 intent-filter#android.view.InputMethod
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:10:13-12:29
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:10:13-12:29
 action#android.view.InputMethod
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:11:17-67
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:11:17-67
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:11:25-64
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:11:25-64
 meta-data#android.view.im
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:13:13-88
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:13:13-88
 	android:resource
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:13:55-85
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:13:55-85
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:13:24-54
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:13:24-54
 activity#zhang.stu.NewInputMethod.SettingActivity
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:16:9-120
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:16:9-120
 	android:theme
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:16:75-118
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:16:75-118
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:16:19-74
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:16:19-74
 activity#zhang.stu.NewInputMethod.SettingList
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:17:9-117
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:17:9-117
 	android:theme
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:17:71-114
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:17:71-114
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:17:19-70
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:17:19-70
 activity#zhang.stu.NewInputMethod.LastestInputWordsList
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:18:9-127
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:18:9-127
 	android:theme
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:18:81-124
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:18:81-124
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:18:19-80
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:18:19-80
 activity#zhang.stu.NewInputMethod.SelfMadeWords
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:19:9-75
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:19:9-75
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:19:19-72
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:19:19-72
 activity#zhang.stu.NewInputMethod.ContactsActivity
-ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:20:9-132
+ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:20:9-132
 	android:permission
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:20:76-129
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:20:76-129
 	android:name
-		ADDED from /home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/AndroidManifest.xml:20:19-75
+		ADDED from S:\Projects\NewInputMethod\app\src\main\AndroidManifest.xml:20:19-75

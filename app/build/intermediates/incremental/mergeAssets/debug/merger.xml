@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/assets"/></dataSet><dataSet config="debug"><source path="/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="S:\Projects\NewInputMethod\app\src\main\assets"/></dataSet><dataSet config="debug"><source path="S:\Projects\NewInputMethod\app\src\debug\assets"/></dataSet></merger>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/androidTest/res"/><source path="/home/zhang/AndroidStudioProjects/NewInputMethod/app/build/generated/res/rs/androidTest/debug"/><source path="/home/zhang/AndroidStudioProjects/NewInputMethod/app/build/generated/res/resValues/androidTest/debug"/></dataSet><mergedItems/></merger>
+<merger version="3"><dataSet config="main"><source path="S:\Projects\NewInputMethod\app\src\androidTest\res"/><source path="S:\Projects\NewInputMethod\app\build\generated\res\rs\androidTest\debug"/><source path="S:\Projects\NewInputMethod\app\build\generated\res\resValues\androidTest\debug"/></dataSet><mergedItems/></merger>

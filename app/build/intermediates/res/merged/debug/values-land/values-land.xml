@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/values-land/dimens.xml -->
+    <!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/values-land/dimens.xml -->
     <eat-comment/>
     <dimen name="key_height">46dip</dimen>
 </resources>

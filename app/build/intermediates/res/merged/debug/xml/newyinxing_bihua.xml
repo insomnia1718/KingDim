@@ -44,4 +44,4 @@
         <Key android:codes="-6000" android:keyIcon="@drawable/yin"  android:keyEdgeFlags="right"/>
     </Row>
 </Keyboard>
-    <!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/xml/newyinxing_bihua.xml -->
+    <!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/xml/newyinxing_bihua.xml -->

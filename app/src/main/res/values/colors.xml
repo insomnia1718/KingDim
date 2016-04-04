@@ -7,4 +7,5 @@
     <color name="candidate_background">#bbffffff</color>
     <color name="text_normal">#7A7A7A</color>
     <color name="light_gray">#dcdcdc</color>
+    <color name="text_lightGray">#BEC2C3</color>
 </resources>

@@ -1,6 +1,7 @@
 package zhang.stu.NewInputMethod.widget;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -28,11 +29,11 @@ public class CandidateLayout extends LinearLayout implements View.OnClickListene
     private int pageCount = 1;
     private OnChooseSuggestionListener listener;
 
-    public interface OnChooseSuggestionListener{
+    public interface OnChooseSuggestionListener {
         void onChoose(String suggestion);
     }
 
-    public void setOnChooseSuggestionListener(OnChooseSuggestionListener listener){
+    public void setOnChooseSuggestionListener(OnChooseSuggestionListener listener) {
         this.listener = listener;
     }
 
@@ -69,30 +70,28 @@ public class CandidateLayout extends LinearLayout implements View.OnClickListene
                 pageIndex--;
                 updateCanView();
             }
-        }else if(v == can_right){
-            if(pageCount == 1 || pageIndex == pageCount -1) return;
-            else{
+        } else if (v == can_right) {
+            if (pageCount == 1 || pageIndex == pageCount - 1) return;
+            else {
                 pageIndex++;
                 updateCanView();
             }
-        }else{
-            if(v.getTag()!=null) {
-                if(listener!=null) {
+        } else {
+            if (v.getTag() != null) {
+                if (listener != null) {
                     listener.onChoose((String) v.getTag());
                 }
             }
         }
     }
 
-    private void updateCanView(){
+    private void updateCanView() {
         can_content.removeAllViews();
-        Log.d("count",String.valueOf(pageCount));
-        Log.d("index", String.valueOf(pageIndex));
-        if(pageIndex == pageCount - 1){
-            for (int i = pageIndex*5;i < suggestions.size();i++){
+        if (pageIndex == pageCount - 1) {
+            for (int i = pageIndex * 5; i < suggestions.size(); i++) {
                 can_content.addView(getTextView(suggestions.get(i)));
             }
-        }else {
+        } else {
             for (int i = pageIndex * 5; i < pageIndex * 5 + 5; i++) {
                 can_content.addView(getTextView(suggestions.get(i)));
             }
@@ -100,7 +99,11 @@ public class CandidateLayout extends LinearLayout implements View.OnClickListene
     }
 
     public void setSuggestions(List<String> suggestions) {
-        if(suggestions == null || suggestions.size() == 0) return;
+        this.setVisibility(VISIBLE);
+        if (suggestions == null || suggestions.size() == 0) {
+            this.setVisibility(INVISIBLE);
+            return;
+        }
         this.suggestions = suggestions;
         this.pageIndex = 0;
         this.pageCount = 1;
@@ -112,7 +115,7 @@ public class CandidateLayout extends LinearLayout implements View.OnClickListene
                 can_content.addView(getTextView(suggestion));
             }
         } else {
-            pageCount = (int) Math.ceil((double) suggestions.size()/5);
+            pageCount = (int) Math.ceil((double) suggestions.size() / 5);
             updateCanView();
         }
     }
@@ -122,11 +125,12 @@ public class CandidateLayout extends LinearLayout implements View.OnClickListene
         textView.setPadding(dpToPx(8), dpToPx(8), dpToPx(8), dpToPx(8));
         textView.setTag(text);
         textView.setText(text);
-        LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,1.0f);
+        LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1.0f);
         textView.setLayoutParams(layoutParams);
         textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
         textView.setBackgroundDrawable(getResources().getDrawable(R.drawable.key_bg_selector));
+        textView.setTextColor(Color.parseColor("#3F51B5"));
         textView.setOnClickListener(this);
         return textView;
     }

@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/light_gray"
+    android:gravity="center_vertical"
     android:padding="4dp"
-    android:layout_height="match_parent">
+    android:layout_height="230dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -360,4 +361,4 @@
             android:layout_weight="1.5"
             />
     </LinearLayout>
-</LinearLayout><!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/layout/input_qwer.xml -->
+</LinearLayout><!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/layout/input_qwer.xml -->

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:textSize="15dp"
         android:text="1"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@color/text_normal"
         android:id="@+id/key_number"
         android:visibility="gone"
         />
@@ -30,4 +30,4 @@
         android:id="@+id/key_icon"
         android:visibility="gone"
         />
-</LinearLayout><!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/layout/key_layout.xml -->
+</LinearLayout><!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/layout/key_layout.xml -->

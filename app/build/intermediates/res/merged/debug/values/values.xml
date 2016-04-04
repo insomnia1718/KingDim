@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="candidate_background">#bbffffff</color>
     <color name="candidate_normal">#FF000000</color>
     <color name="candidate_other">#ff808080</color>
     <color name="candidate_recommended">#FFE35900</color>
     <color name="light_gray">#dcdcdc</color>
+    <color name="text_lightGray">#BEC2C3</color>
     <color name="text_normal">#7A7A7A</color>
     <declare-styleable name="KeyView"><attr format="string" name="text_up"/><attr format="string" name="text_down"/><attr format="reference" name="icon"/><attr format="string" name="input_text"/><attr format="integer" name="code"/><attr format="integer" name="text_down_size"/><attr format="integer" name="text_up_size"/><attr format="color" name="text_down_color"/><attr format="color" name="text_up_color"/></declare-styleable>
-    <!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="candidate_font_height">24sp</dimen>
     <dimen name="candidate_vertical_padding">8sp</dimen>
     <dimen name="key_height">50dip</dimen>
-    <!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="ime_name">新音型输入法</string>
     <string name="label_go_key">Go</string>
     <string name="label_next_key">Next</string>
     <string name="label_send_key">Send</string>
     <string name="word_separators">\u0020.,;:!?\n()[]*&amp;@{}/&lt;>_+=|"</string>
-    <!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="key_left">
         <item name="android:paddingBottom">8dp</item>

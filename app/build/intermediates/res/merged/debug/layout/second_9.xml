@@ -21,7 +21,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="4dp"
                 app:text_up="1"
-                app:code="22221"
+                app:code="-1049"
                 app:text_down="i"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -29,7 +29,7 @@
                 android:layout_weight="1"
                 app:text_up="2"
                 app:text_down="a+"
-                app:code="22222"
+                app:code="-1050"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -37,7 +37,7 @@
                 android:layout_weight="1"
                 app:text_up="3"
                 app:text_down="e+"
-                app:code="22223"
+                app:code="-1051"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_weight="1"
                 app:text_up="4"
                 app:text_down="ia+"
-                app:code="22224"
+                app:code="-1052"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 app:text_up="5"
                 app:text_down="an+"
-                app:code="22225"
+                app:code="-1053"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 app:text_up="6"
                 app:text_down="en+"
-                app:code="22226"
+                app:code="-1054"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 app:text_up="7"
                 app:text_down="i+"
-                app:code="22227"
+                app:code="-1055"
                 android:layout_marginRight="4dp"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
@@ -90,14 +90,14 @@
                 android:layout_marginRight="4dp"
                 app:text_up="8"
                 app:text_down="u,ü"
-                app:code="22228"
+                app:code="-1056"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 app:text_up="9"
                 app:text_down="u+"
-                app:code="22229"
+                app:code="-1057"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <LinearLayout
@@ -110,7 +110,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="4dp"
                 app:text_down="*"
-                app:code="10009"
+                app:code="-1042"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
                 android:layout_width="0dp"
@@ -118,7 +118,7 @@
                 android:layout_marginRight="4dp"
                 app:text_up="0"
                 app:text_down="uo,o+"
-                app:code="22220"
+                app:code="-1048"
                 android:layout_height="match_parent" />
             <zhang.stu.NewInputMethod.widget.KeyView
                 android:layout_width="0dp"
@@ -127,4 +127,4 @@
                 app:code="10010"
                 android:layout_height="match_parent" />
         </LinearLayout>
-    </LinearLayout><!-- From: file:/home/zhang/AndroidStudioProjects/NewInputMethod/app/src/main/res/layout/second_9.xml -->
+    </LinearLayout><!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/layout/second_9.xml -->

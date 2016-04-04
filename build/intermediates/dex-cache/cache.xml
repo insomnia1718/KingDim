@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/home/zhang/AndroidStudioProjects/NewInputMethod/app/libs/butterknife-7.0.1.jar"
+        jar="S:\Projects\NewInputMethod\app\libs\butterknife-7.0.1.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="/home/zhang/AndroidStudioProjects/NewInputMethod/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1-a8ac9869df5f9c221f31b31a6459130bb121a7f6.jar" />
+        <dex dex="S:\Projects\NewInputMethod\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1-8486cedf36a6a4cbea2633aea84a485f1affc6cc.jar" />
     </item>
 
 </items>

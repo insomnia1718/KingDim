@@ -11,9 +11,11 @@ import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
 import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
+import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -87,6 +89,7 @@ public class KingDimInputMethodService extends InputMethodService
     private Key ModeKey;
     private View pre_view;
     private View cur_view;
+    private LinearLayout cursorView;
     private boolean shiftUp = false;
     public static StringBuilder lastestInputWords = new StringBuilder("      ");//?????????????????????,??????6???????
 
@@ -101,7 +104,7 @@ public class KingDimInputMethodService extends InputMethodService
         InputStream is = getResources().openRawResource(R.raw.lib1zbz);
         InputStream InitCache = getResources().openRawResource(R.raw.initcache);
         InputStream InitCacheOrder = getResources().openRawResource(R.raw.initcacheorder);
-        kimCode = new KingDimEngine(is, InitCache, InitCacheOrder);
+        kimCode = new KingDimEngine(is);
         //getResources??contextWrapper??????????contextWrapper??InputMethodService???????
         mWordSeparators = getResources().getString(R.string.word_separators);
     }
@@ -113,7 +116,7 @@ public class KingDimInputMethodService extends InputMethodService
     //????????????????????????????UI??????????
     @Override
     public void onInitializeInterface() {////?????????????????findViewById??????????????滹??
-        //System.out.println("onInitializeInterface()");
+        System.out.println("onInitializeInterface()");
         if (mNewyinxing_firstKeyboard != null) {//???????÷??????????
             // Configuration changes can happen after the keyboard gets recreated,
             // so we need to be able to re-build the keyboards if the available
@@ -142,7 +145,7 @@ public class KingDimInputMethodService extends InputMethodService
     //????????????????????????????????????????????????????
     @Override
     public View onCreateInputView() {
-        //System.out.println("onCreateInputView()");
+        System.out.println("onCreateInputView()");
         linearLayout = (LinearLayout) getLayoutInflater().inflate(
                 R.layout.input, null);
 //        mInputView = (KeyboardView)linearLayout.findViewById(R.id.keyboard);
@@ -155,10 +158,13 @@ public class KingDimInputMethodService extends InputMethodService
         downBtn.setOnClickListener(this);
         setListener(linearLayout);
         main_input_view = (LinearLayout) linearLayout.findViewById(R.id.main_input_view);
-        canView = (CandidateLayout)linearLayout.findViewById(R.id.canView);
-        funcLayout = (RelativeLayout)linearLayout.findViewById(R.id.layout_func);
-        yinmu_layout = (LinearLayout)linearLayout.findViewById(R.id.layout_first_9);
-        yunmu_layout = (LinearLayout)linearLayout.findViewById(R.id.layout_second_9);
+        canView = (CandidateLayout) linearLayout.findViewById(R.id.canView);
+        funcLayout = (RelativeLayout) linearLayout.findViewById(R.id.layout_func);
+        yinmu_layout = (LinearLayout) linearLayout.findViewById(R.id.layout_first_9);
+        yunmu_layout = (LinearLayout) linearLayout.findViewById(R.id.layout_second_9);
+        bihua_layout = (LinearLayout) linearLayout.findViewById(R.id.layout_bihua_9);
+        cursorView = (LinearLayout) linearLayout.findViewById(R.id.cursorView);
+//        cursorView.setOnTouchListener(new cursorTouchListener());
         updateCandidates();
         canView.setOnChooseSuggestionListener(new CandidateLayout.OnChooseSuggestionListener() {
             @Override
@@ -172,7 +178,44 @@ public class KingDimInputMethodService extends InputMethodService
         if (mWindowManager == null) {
             mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         }
+        cur_view = main_input_view;
         return linearLayout;
+    }
+
+    class cursorTouchListener implements View.OnTouchListener {
+        int s = 0;
+        int e = 0;
+        float x = 0f;
+        float lastX = 0f;
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                x = event.getX();
+                Log.i("cursor", String.valueOf(x));
+            } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                Log.i(String.valueOf(event.getX()),String.valueOf(lastX));
+                Log.i("--",String.valueOf((event.getX()-lastX)>2.0f));
+                if ((event.getX() - lastX) > 2.0f) {
+                    Log.i("cursor", getCurrentInputConnection().getTextAfterCursor(1000,0).toString()+"---");
+                    if(getCurrentInputConnection().getTextAfterCursor(s,0).length() > 0) {
+                        getCurrentInputConnection().setSelection(s++, s++);
+                        Log.i("cursorLo", String.valueOf(s));
+                    }
+                    lastX = event.getX();
+                } else if (lastX - event.getX() > 2.0f) {
+                    if(getCurrentInputConnection().getTextBeforeCursor(1000, 0).length() > 0) {
+                        getCurrentInputConnection().setSelection(s--, s--);
+                        Log.i("cursorLo", String.valueOf(s));
+                    }
+                    lastX = event.getX();
+                }
+
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+
+            }
+            return false;
+        }
     }
 
     private void setListener(ViewGroup viewGroup) {
@@ -181,7 +224,7 @@ public class KingDimInputMethodService extends InputMethodService
             if (v instanceof KeyView) {
                 v.setOnClickListener(this);
             } else if (v instanceof ViewGroup) {
-                setListener((ViewGroup)v);
+                setListener((ViewGroup) v);
             }
         }
     }
@@ -216,14 +259,14 @@ public class KingDimInputMethodService extends InputMethodService
      */
     @Override
     public void onStartInput(EditorInfo attribute, boolean restarting) {
-        //System.out.println("onStartInput()");
+        System.out.println("onStartInput()");
         super.onStartInput(attribute, restarting);
 
         // Reset our state.  We want to do this even if restarting, because
         // the underlying state of the text editor could have changed in any way.
         mComposing.setLength(0);//?????????????????????????????????????????л???????????????????????????????????????
         updateCandidates();
-        Mode = 0;// ??????????????????????? 
+        Mode = 0;// ???????????????????????
         if (!restarting) {
             // Clear shift states.
             mMetaState = 0;
@@ -356,7 +399,9 @@ public class KingDimInputMethodService extends InputMethodService
     //???????????????????????л????????????????????仯
     @Override
     public void onStartInputView(EditorInfo attribute, boolean restarting) {
-        //System.out.println("onStartInputView()");
+        System.out.println("onStartInputView()");
+        mComposing.setLength(0);
+        updateKeyboard();
         super.onStartInputView(attribute, restarting);
         // Apply the selected keyboard to the input view.
         //System.out.println("setting keyboard...");
@@ -442,7 +487,7 @@ public class KingDimInputMethodService extends InputMethodService
         if (mCompletionOn) {
 //            mCompletions = completions;//???????????????????????????
             if (completions == null) {//??к????
-                setSuggestions(null, false, false);
+                setSuggestions(null);
                 return;
             }
 
@@ -451,7 +496,7 @@ public class KingDimInputMethodService extends InputMethodService
                 CompletionInfo ci = completions[i];
                 if (ci != null) stringList.add(ci.getText().toString());
             }
-            setSuggestions(stringList, true, true);
+            setSuggestions(stringList);
         }
     }
 
@@ -898,7 +943,7 @@ public class KingDimInputMethodService extends InputMethodService
 //				e.printStackTrace();
 //			}          
             updateCandidates();//???????б?
-            setSuggestions(suggestions, true, true);
+            setSuggestions(suggestions);
         } else if ((primaryCode >= 1000) && (primaryCode <= 1017)) {
 //			  handleSymbolicExpression(primaryCode);
         } else {
@@ -962,30 +1007,41 @@ public class KingDimInputMethodService extends InputMethodService
      * ??????????У??????????????????????????????????????????????
      * */
     private void updateCandidates() {
-        if (!mCompletionOn) {
-            if (mComposing.length() > 0) {
-                ArrayList<String> list = new ArrayList<String>();
-                list.add(mComposing.toString());
-                setSuggestions(list, true, true);
-            } else {
-                setSuggestions(null, false, false);
+        if (mComposing.length() == 0) {
+            setSuggestions(null);
+            if (funcLayout != null && canView != null) {
+                funcLayout.setVisibility(View.VISIBLE);
+
+
+                canView.setVisibility(View.GONE);
             }
+        } else {
+            setSuggestions(kimCode.getCandidates(mComposing));
         }
+//        if (!mCompletionOn) {
+//            if (mComposing.length() > 0) {
+//                ArrayList<String> list = new ArrayList<String>();
+//                list.add(mComposing.toString());
+//                setSuggestions(list);
+//            } else {
+//                setSuggestions(null);
+//            }
+//        }
     }
 
-    private void updateKeyboard(){
-        if(mComposing.length() == 0){
+    private void updateKeyboard() {
+        Log.i("updateBoard", String.valueOf(mComposing.length()));
+        if (mComposing.length() == 0) {
             showKeyboardType(0);
-        }else if(mComposing.length() == 1){
+        } else if (mComposing.length() == 1) {
             showKeyboardType(1);
-        }else if(mComposing.length() >= 2){
+        } else if (mComposing.length() >= 2) {
             showKeyboardType(2);
         }
     }
 
     //???ú??????????????????????????cnadidatevView?????????????
-    public void setSuggestions(List<String> suggestions, boolean completions,
-                               boolean typedWordValid) {
+    public void setSuggestions(List<String> suggestions) {
 //        if (suggestions != null && suggestions.size() > 0) {
 //            setCandidatesViewShown(true);//?ú????????
 //        } else if (isExtractViewShown()) {
@@ -994,7 +1050,11 @@ public class KingDimInputMethodService extends InputMethodService
 //        if (mCandidateView != null) {
 //            mCandidateView.setSuggestions(suggestions, completions, typedWordValid);
 //        }
-        if(canView!=null) {
+        if (canView != null) {
+            if (suggestions != null && suggestions.size() != 0) {
+                funcLayout.setVisibility(View.GONE);
+                canView.setVisibility(View.VISIBLE);
+            }
             canView.setSuggestions(suggestions);
         }
     }
@@ -1115,7 +1175,7 @@ public class KingDimInputMethodService extends InputMethodService
             mCandidateView.clear();
         }
 //            updateShiftKeyState(getCurrentInputEditorInfo());
-        kimCode.updateCache(mSuggestions.get(index).toString());//???????????
+//        kimCode.updateCache(mSuggestions.get(index).toString());//???????????
         //commitTyped(getCurrentInputConnection());
       /*  } else if (mComposing.length() > 0) {
             // If we were generating candidate suggestions for the current
@@ -1337,7 +1397,7 @@ public class KingDimInputMethodService extends InputMethodService
     }
 
     private void commitText(String text) {
-        getCurrentInputConnection().commitText(text, 0);
+        getCurrentInputConnection().commitText(text, 1);
     }
 
     @Override
@@ -1348,13 +1408,18 @@ public class KingDimInputMethodService extends InputMethodService
                 commitText(((KeyView) v).getInput_text());
                 return;
             }
-            if((code >= -1058) && (code <= -1042)){
-                mComposing.append((char) (-code-1000));//把当前输入的一个字符添加到mComposing字符串中
+            if ((code >= -1058) && (code <= -1042)) {
+                mComposing.append((char) (-code - 1000));//把当前输入的一个字符添加到mComposing字符串中
+                Log.d("composing", mComposing.toString());
                 getCurrentInputConnection().setComposingText(mComposing, 1);//在输入目标中也显示mComposing
                 List<String> suggestions = kimCode.getCandidates(mComposing);
+                Log.d("composing", suggestions.toString());
                 updateCandidates();//更新候选列表
-                setSuggestions(suggestions, true, true);
+                setSuggestions(suggestions);
                 updateKeyboard();
+            }
+            if (code >= 50001 && code <= 50017) {
+                commitText(((KeyView) v).getInput_text());
             }
             switch (code) {
                 case 10000:
@@ -1367,13 +1432,20 @@ public class KingDimInputMethodService extends InputMethodService
                     commitText("？");
                     break;
                 case 10003:
-                    commitText("！");
+                    replaceInputViewById(R.layout.input_number);
                     break;
                 case 10004:
-                    replaceEnInput();
+                    replaceInputViewById(R.layout.input_qwer);
                     break;
                 case 10005:
-                    getCurrentInputConnection().deleteSurroundingText(1, 0);
+                    if (mComposing.length() == 0 && canView.getVisibility() == View.GONE) {
+                        getCurrentInputConnection().deleteSurroundingText(1, 0);
+                    } else if (mComposing.length() > 0) {
+                        mComposing.deleteCharAt(mComposing.length() - 1);
+                        updateCandidates();
+                        updateKeyboard();
+                        getCurrentInputConnection().setComposingText(mComposing, 1);
+                    }
                     break;
                 case 10006:
                     break;
@@ -1394,7 +1466,7 @@ public class KingDimInputMethodService extends InputMethodService
                     commitText(" ");
                     break;
                 case 44429:
-                    doReturnView();
+                    replaceView(cur_view, main_input_view);
                     break;
                 case 44430:
                     break;
@@ -1405,9 +1477,13 @@ public class KingDimInputMethodService extends InputMethodService
                     sendDownUpKeyEvents(KeyEvent.KEYCODE_SPACE);
                     break;
                 case 44433:
+                    replaceInputViewById(R.layout.input_number);
                     break;
                 case 44434:
                     sendDownUpKeyEvents(KeyEvent.KEYCODE_ENTER);
+                    break;
+                case 50018:
+                    doReturnView();
                     break;
             }
         }
@@ -1421,59 +1497,69 @@ public class KingDimInputMethodService extends InputMethodService
         }
     }
 
-    private void doEnShift(View view,boolean up) {
+    private void doEnShift(View view, boolean up) {
         shiftUp = up;
         LinearLayout cur = (LinearLayout) view;
         for (int i = 0; i < cur.getChildCount(); i++) {
             View v = cur.getChildAt(i);
             if (v instanceof KeyView) {
-                if(((KeyView) v).getCode() == 44427){
-                    if(up){
-                        v.setBackgroundColor(Color.DKGRAY);
-                    }else{
-                        v.setBackgroundColor(Color.WHITE);
+                if (((KeyView) v).getCode() == 44427) {
+                    if (up) {
+                        ((KeyView) v).setIcon(getResources().getDrawable(R.drawable.icon_upcase_click));
+                    } else {
+                        ((KeyView) v).setIcon(getResources().getDrawable(R.drawable.icon_upcase));
                     }
                 }
                 if (((KeyView) v).getCode() >= 44401 && ((KeyView) v).getCode() <= 44426) {
-                    if(up) {
+                    if (up) {
                         ((KeyView) v).toUpcase();
-                    }else{
+                    } else {
                         ((KeyView) v).toLowcase();
                     }
                 }
-            }else if(v instanceof ViewGroup){
-                doEnShift(v,up);
+            } else if (v instanceof ViewGroup) {
+                doEnShift(v, up);
             }
         }
     }
 
-    private void showKeyboardType(int type){
+    private void showKeyboardType(int type) {
         //0 == 音母键盘，1 == 韵母键盘， 2 == 笔画键盘
         LayoutInflater inflater = getLayoutInflater();
-        switch (type){
-            case 0:
-                if(yunmu_layout!=null&&yinmu_layout!=null) {
+        if (yinmu_layout != null && yunmu_layout != null && bihua_layout != null) {
+            switch (type) {
+                case 0:
                     yunmu_layout.setVisibility(View.GONE);
+                    bihua_layout.setVisibility(View.GONE);
                     yinmu_layout.setVisibility(View.VISIBLE);
-                }
-                break;
-            case 1:
-                if(yunmu_layout!=null&&yinmu_layout!=null) {
+                    break;
+                case 1:
+                    bihua_layout.setVisibility(View.GONE);
                     yinmu_layout.setVisibility(View.GONE);
                     yunmu_layout.setVisibility(View.VISIBLE);
-                }
-                break;
+                    break;
+                case 2:
+                    bihua_layout.setVisibility(View.VISIBLE);
+                    yinmu_layout.setVisibility(View.GONE);
+                    yunmu_layout.setVisibility(View.GONE);
+            }
         }
     }
 
-    private void hideKeyboard(){
+    private void hideKeyboard() {
         requestHideSelf(0);
         mComposing.setLength(0);
     }
 
-    private void replaceEnInput() {
-        View enInputView = getLayoutInflater().inflate(R.layout.input_qwer, null);
-        replaceView(main_input_view, enInputView);
+    @Override
+    public void requestHideSelf(int flags) {
+        super.requestHideSelf(flags);
+        getCurrentInputConnection().setComposingText("", 0);
+    }
+
+    private void replaceInputViewById(int layoutId) {
+        View newInputView = getLayoutInflater().inflate(layoutId, null);
+        replaceView(cur_view, newInputView);
     }
 
     private void replaceView(View currentView, View newView) {
@@ -1483,7 +1569,7 @@ public class KingDimInputMethodService extends InputMethodService
         int index = parent.indexOfChild(currentView);
         parent.removeView(currentView);
         parent.addView(newView, index);
-        if(cur_view instanceof ViewGroup) {
+        if (cur_view instanceof ViewGroup) {
             setListener((ViewGroup) cur_view);
         }
     }

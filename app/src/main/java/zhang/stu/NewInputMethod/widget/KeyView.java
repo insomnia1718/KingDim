@@ -25,6 +25,7 @@ public class KeyView extends LinearLayout {
     private String input_text;
     private String up;
     private String down;
+    private Drawable icon;
 
     public KeyView(Context context) {
         super(context);
@@ -55,7 +56,7 @@ public class KeyView extends LinearLayout {
             down = typedArray.getString(R.styleable.KeyView_text_down);
             Drawable icon = typedArray.getDrawable(R.styleable.KeyView_icon);
             input_text = typedArray.getString(R.styleable.KeyView_input_text);
-            int text_up_color = typedArray.getColor(R.styleable.KeyView_text_up_color, Color.DKGRAY);
+            int text_up_color = typedArray.getColor(R.styleable.KeyView_text_up_color, getResources().getColor(R.color.text_lightGray));
             int text_down_color = typedArray.getColor(R.styleable.KeyView_text_down_color, Color.BLACK);
             int text_up_size = typedArray.getInteger(R.styleable.KeyView_text_up_size, 15);
             int text_down_size = typedArray.getInteger(R.styleable.KeyView_text_down_size, 18);
@@ -105,5 +106,10 @@ public class KeyView extends LinearLayout {
             key_word.setText(down.toLowerCase());
             setInput_text(down.toLowerCase());
         }
+    }
+
+    public void setIcon(Drawable icon) {
+        this.icon = icon;
+        key_icon.setImageDrawable(icon);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="0dp"
-    android:layout_height="match_parent"
+    android:layout_height="230dp"
     android:layout_weight="0.7"
     android:paddingLeft="4dp"
     android:paddingRight="4dp"
@@ -24,9 +24,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="4dp"
-            app:text_up="1"
-            app:code="-1049"
-            app:text_down="ab"
+            app:code="50007"
+            app:input_text="1"
+            app:text_down_size="20"
+            app:text_down="1"
             />
 
         <zhang.stu.NewInputMethod.widget.KeyView
@@ -34,18 +35,20 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="4dp"
-            app:text_up="2"
-            app:text_down="c"
-            app:code="-1050"
+            app:text_down="2"
+            app:input_text="2"
+            app:text_down_size="20"
+            app:code="50008"
             />
 
         <zhang.stu.NewInputMethod.widget.KeyView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:text_up="3"
-            app:text_down="def"
-            app:code="-1051"
+            app:text_down="3"
+            app:input_text="3"
+            app:text_down_size="20"
+            app:code="50009"
             />
     </LinearLayout>
 
@@ -62,9 +65,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="4dp"
-            app:text_up="4"
-            app:text_down="gh"
-            app:code="-1052"
+            app:text_down="4"
+            app:input_text="4"
+            app:text_down_size="20"
+            app:code="50010"
             />
 
         <zhang.stu.NewInputMethod.widget.KeyView
@@ -72,18 +76,20 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="4dp"
-            app:text_up="5"
-            app:text_down="jkl"
-            app:code="-1053"
+            app:text_down="5"
+            app:input_text="5"
+            app:text_down_size="20"
+            app:code="50011"
             />
 
         <zhang.stu.NewInputMethod.widget.KeyView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:text_up="6"
-            app:text_down="mno"
-            app:code="-1054"
+            app:text_down="6"
+            app:input_text="6"
+            app:text_down_size="20"
+            app:code="50012"
             />
     </LinearLayout>
 
@@ -100,9 +106,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="4dp"
-            app:text_up="7"
-            app:text_down="pqr"
-            app:code="-1055"
+            app:text_down="7"
+            app:input_text="7"
+            app:text_down_size="20"
+            app:code="50013"
             />
 
         <zhang.stu.NewInputMethod.widget.KeyView
@@ -110,18 +117,20 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="4dp"
-            app:text_up="8"
-            app:text_down="st"
-            app:code="-1056"
+            app:text_down="8"
+            app:input_text="8"
+            app:text_down_size="20"
+            app:code="50014"
             />
 
         <zhang.stu.NewInputMethod.widget.KeyView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:text_up="9"
-            app:text_down="wxy"
-            app:code="-1057"
+            app:text_down="9"
+            app:input_text="9"
+            app:text_down_size="20"
+            app:code="50015"
             />
     </LinearLayout>
 
@@ -131,32 +140,35 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         >
-
-        <zhang.stu.NewInputMethod.widget.KeyView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="4dp"
-            app:text_down="*"
-            app:code="-1042"
-            />
-
-        <zhang.stu.NewInputMethod.widget.KeyView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="4dp"
-            app:text_up="0"
-            app:text_down="z"
-            app:code="-1048"
-            />
 
         <zhang.stu.NewInputMethod.widget.KeyView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:icon="@drawable/icon_space"
+            android:layout_marginRight="4dp"
             app:code="10010"
             />
+
+        <zhang.stu.NewInputMethod.widget.KeyView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            app:text_down="0"
+            app:text_down_size="20"
+            app:code="50016"
+            app:input_text="0"
+            />
+
+        <zhang.stu.NewInputMethod.widget.KeyView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:text_down="."
+            app:input_text="."
+            app:text_down_size="20"
+            app:code="50017"
+            />
     </LinearLayout>
-</LinearLayout><!-- From: file:/S:/Projects/NewInputMethod/app/src/main/res/layout/first_9.xml -->
+</LinearLayout>
